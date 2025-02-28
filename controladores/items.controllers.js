@@ -28,7 +28,7 @@ export const putItem = async(req, res) => {
     const pool = await sqlConnect();
     const data = await pool
     .request()
-    input("Id", sql.Int, req.params.id)
+    .input("Id", sql.Int, req.params.id)
     .input("name", sql.VarChar, req.body.name)
     .input("price", sql.Float, req.body.price)
     .query("update Item set name=@name, price=@price  where Id = @Id");
