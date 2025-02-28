@@ -5,8 +5,8 @@ export const login = async (req, res) => {
     const data = await pool
     .request()
     .input("username", sql.VarChar, req.body.username)
-    .query("select * from users where username=@username");
-    console.log(data.recordser);
-    let isLogin = data.recordser[0].password === req.body.password
+    .query("select * from Users where username=@username");
+    console.log(data.recordset);
+    let isLogin = data.recordset[0].password === req.body.password
     res.status(200).json({ isLogin: isLogin });
 }
