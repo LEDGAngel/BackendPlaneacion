@@ -19,8 +19,8 @@ export const postItem = async(req, res) => {
     const data = await pool
     .request()
     .input("name", sql.VarChar, req.body.name)
-    .input("price", sql.Float, req.body.name)
-    .query("insert into items (name, price) values (@name, @price)");
+    .input("price", sql.Float, req.body.price)
+    .query("insert into Item (name, price) values (@name, @price)");
     res.status(200).json({operation: true});
 };   
 
@@ -30,8 +30,8 @@ export const putItem = async(req, res) => {
     .request()
     input("Id", sql.Int, req.params.id)
     .input("name", sql.VarChar, req.body.name)
-    .input("price", sql.Float, req.body.name)
-    .query("update items set name=@name, price=@price  where Id = @Id");
+    .input("price", sql.Float, req.body.price)
+    .query("update Item set name=@name, price=@price  where Id = @Id");
     res.status(200).json({operation: true});
 }; 
 
