@@ -6,7 +6,11 @@ export const login = async (req, res) => {
     .request()
     .input("username", sql.VarChar, req.body.username)
     .query("select * from Users where username=@username");
-    console.log(data.recordset);
-    let isLogin = data.recordset[0].password === req.body.password
-    res.status(200).json({ isLogin: isLogin });
+    //console.log(data.recordset);
+    let isLogin = data.recordset[0].password === req.body.password;
+    if(isLogin){
+        res.status(200).json({ isLogin: isLogin, user: data.recordset[0]})
+    } else {
+        res.status(200).json({ isLogin: isLogin, user: {}});
+    }
 }
