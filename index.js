@@ -10,7 +10,7 @@ import { connectDB } from "./utils/mongodb.js";
 
 const app = express();
 
-connectDB();
+//connectDB();
 
 app.use(cors());
 app.use(morgan("dev"));
@@ -22,5 +22,5 @@ app.use(loginRouter);
 
 
 
-app.listen(5001, console.log("http://localhost:5001"));
+app.listen(5000, console.log("http://localhost:5000"));
 
