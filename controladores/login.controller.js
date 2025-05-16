@@ -1,4 +1,4 @@
-import { db } from '../utils/firebase.js';
+import db from '../utils/firebase.js';
 import crypto from "crypto";
 import jwt from "jsonwebtoken";
 

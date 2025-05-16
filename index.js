@@ -5,7 +5,6 @@ import itemsRouter from "./routes/items.router.js"
 import loginRouter from "./routes/login.router.js"
 import cors from "cors";
 import morgan from "morgan";
-import { connectDB } from "./utils/mongodb.js";
 
 const app = express();
 
